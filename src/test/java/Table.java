@@ -2,6 +2,8 @@ import java.util.HashMap;
 import java.util.Map;
 
 public class Table {
+    public final static Map<Double, Double> systemFMap = new HashMap<>();
+
     public final static Map<Double, Double> trigonomFMap = new HashMap<>();
     public final static Map<Double, Double> logarithmicFMap = new HashMap<>();
 
@@ -13,8 +15,29 @@ public class Table {
     public final static Map<Double, Double> tanMap = new HashMap<>();
 
     public final static Map<Double, Double> lnMap = new HashMap<>();
+    public final static Map<Double, Double> log3Map = new HashMap<>();
+    public final static Map<Double, Double> log5Map = new HashMap<>();
+    public final static Map<Double, Double> log10Map = new HashMap<>();
 
     static {
+        systemFMap.put(-0.4, 336.6779);
+        systemFMap.put(-1.0, 8.8386);
+        systemFMap.put(-1.43, 262.25079);
+        systemFMap.put(-1.7, -736.4724);
+        systemFMap.put(-2.06, -84.9726);
+        systemFMap.put(-2.54, -344.5429);
+        systemFMap.put(-3.42, -291.8291);
+        systemFMap.put(-3.87, -0.0644);
+        systemFMap.put(-4.57, -220.13498);
+        systemFMap.put(-4.9, 260.0393);
+        systemFMap.put(-5.4, 30.1132);
+        systemFMap.put(-5.9, 494.3992);
+        systemFMap.put(0.1, 3.79487);
+        systemFMap.put(0.6, 23.8711);
+        systemFMap.put(1.4, 18.24437);
+        systemFMap.put(2.7, -1.53375);
+        systemFMap.put(7.3, -2.3532);
+
         trigonomFMap.put(-0.4, 336.6779);
         trigonomFMap.put(-1.0, 8.8386);
         trigonomFMap.put(-1.43, 262.25079);
@@ -28,11 +51,11 @@ public class Table {
         trigonomFMap.put(-5.4, 30.1132);
         trigonomFMap.put(-5.9, 494.3992);
 
-        logarithmicFMap.put(0.1,3.79487);
-        logarithmicFMap.put(0.6,23.8711);
-        logarithmicFMap.put(1.4,18.24437);
-        logarithmicFMap.put(2.7,-1.53375);
-        logarithmicFMap.put(7.3,-2.3532);
+        logarithmicFMap.put(0.1, 3.79487);
+        logarithmicFMap.put(0.6, 23.8711);
+        logarithmicFMap.put(1.4, 18.24437);
+        logarithmicFMap.put(2.7, -1.53375);
+        logarithmicFMap.put(7.3, -2.3532);
 
         sinMap.put(-0.4, -0.38941);
         sinMap.put(-1.0, -0.841470);
@@ -111,5 +134,29 @@ public class Table {
         tanMap.put(-4.9, 5.267493);
         tanMap.put(-5.4, 1.217540);
         tanMap.put(-5.9, 0.403110);
+
+        lnMap.put(0.1, -2.3025850);
+        lnMap.put(0.6, -0.5108256);
+        lnMap.put(1.4, 0.33647224);
+        lnMap.put(2.7, 0.99325177);
+        lnMap.put(7.3, 1.98787435);
+
+        log3Map.put(0.1, -2.09590327);
+        log3Map.put(0.6, -0.46497352);
+        log3Map.put(1.4, 0.30627023);
+        log3Map.put(2.7, 0.90409673);
+        log3Map.put(7.3, 1.80944121);
+
+        log5Map.put(0.1, -1.43067656);
+        log5Map.put(0.6, -0.31739381);
+        log5Map.put(1.4, 0.20906196);
+        log5Map.put(2.7, 0.61714203);
+        log5Map.put(7.3, 1.23513578);
+
+        log10Map.put(0.1, -1.0);
+        log10Map.put(0.6, -0.22184875);
+        log10Map.put(1.4, 0.14612804);
+        log10Map.put(2.7, 0.43136376);
+        log10Map.put(7.3, 0.86332286);
     }
 }
