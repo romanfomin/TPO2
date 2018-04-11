@@ -1,17 +1,8 @@
-import Functions.Computable;
-import Functions.FunctionsSystem;
 import org.junit.jupiter.api.Test;
 
 public abstract class Tests {
-    private double x;
-    private double accuracy;
-    private double result;
-    private double expected;
-
-    private Computable logarithmicFunction, trigonometricFunction;
-    private Computable sin, cos, cot, csc, sec, tan;
-    private FunctionsSystem functionsSystem;
-
+    protected double x;
+    protected double expected;
 
     public abstract void doMockAndAssert();
 

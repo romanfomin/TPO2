@@ -1,25 +1,18 @@
-import Functions.Computable;
 import Functions.FunctionsSystem;
-import Functions.Logarithmic.Ln;
-import Functions.Logarithmic.Log3;
 import Functions.Logarithmic.LogarithmicFunction;
 import Functions.Trigonometric.TrigonometricFunction;
 import org.junit.jupiter.api.Assertions;
-import org.junit.jupiter.api.Test;
 import org.mockito.Mockito;
 
 import static org.mockito.Mockito.*;
 
 public class Stage2Tests extends Tests{
 
-    private double x;
     private double accuracy = 0.0001;
     private double result;
-    private double expected;
 
     private LogarithmicFunction logarithmicFunction;
     private TrigonometricFunction trigonometricFunction;
-    private Computable sin, cos, cot, csc, sec, tan;
     private FunctionsSystem functionsSystem;
 
 

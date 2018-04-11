@@ -57,26 +57,26 @@ public class Table {
         logarithmicFMap.put(2.7, -1.53375);
         logarithmicFMap.put(7.3, -2.3532);
 
-        sinMap.put(-0.4, -0.38941);
+        sinMap.put(-0.4, -0.3894183);
         sinMap.put(-1.0, -0.841470);
-        sinMap.put(-1.43, -0.990104);
-        sinMap.put(-1.7, -0.991664);
+        sinMap.put(-1.43, -0.9901045603);
+        sinMap.put(-1.7, -0.99166481);
         sinMap.put(-2.06, -0.882707);
-        sinMap.put(-2.54, -0.565956);
-        sinMap.put(-3.42, 0.274824);
+        sinMap.put(-2.54, -0.5659562304);
+        sinMap.put(-3.42, 0.2748246703);
         sinMap.put(-3.87, 0.665681);
         sinMap.put(-4.57, 0.989879);
         sinMap.put(-4.9, 0.982452);
         sinMap.put(-5.4, 0.772764);
         sinMap.put(-5.9, 0.3738766);
 
-        cosMap.put(-0.4, 0.92106);
+        cosMap.put(-0.4, 0.9210609);
         cosMap.put(-1.0, 0.5403023);
-        cosMap.put(-1.43, 0.140331);
-        cosMap.put(-1.7, -0.128844);
+        cosMap.put(-1.43, 0.1403316058);
+        cosMap.put(-1.7, -0.12884449);
         cosMap.put(-2.06, -0.469923);
-        cosMap.put(-2.54, -0.82443);
-        cosMap.put(-3.42, -0.96149);
+        cosMap.put(-2.54, -0.8244352887);
+        cosMap.put(-3.42, -0.961494358);
         cosMap.put(-3.87, -0.746235);
         cosMap.put(-4.57, -0.1419083);
         cosMap.put(-4.9, 0.1865123);
@@ -140,6 +140,9 @@ public class Table {
         lnMap.put(1.4, 0.33647224);
         lnMap.put(2.7, 0.99325177);
         lnMap.put(7.3, 1.98787435);
+        lnMap.put(3.0, 1.098612288);
+        lnMap.put(5.0, 1.6094379124);
+        lnMap.put(10.0, 2.3025850929);
 
         log3Map.put(0.1, -2.09590327);
         log3Map.put(0.6, -0.46497352);

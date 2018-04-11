@@ -10,14 +10,21 @@ import static org.mockito.Mockito.when;
 
 public class Stage4Tests extends Tests {
 
-    private double x;
     private double accuracy = 0.001;
     private double result;
-    private double expected;
 
     private LogarithmicFunction logarithmicFunction;
     private TrigonometricFunction trigonometricFunction;
-    private Computable sin, cos, cot, csc, sec, tan, ln, log3, log5, log10;
+    private Sin sin;
+    private Cos cos;
+    private Cot cot;
+    private Csc csc;
+    private Sec sec;
+    private Tan tan;
+    private Ln ln;
+    private Log3 log3;
+    private Log5 log5;
+    private Log10 log10;
     private FunctionsSystem functionsSystem;
 
 
@@ -28,28 +35,26 @@ public class Stage4Tests extends Tests {
 
         ln = Mockito.mock(Ln.class);
 
-        when(cos.compute(anyDouble(), anyDouble())).
-                thenAnswer(invocation -> Table.cosMap.get(invocation.getArgument(0)));
-        when(sin.compute(anyDouble(), anyDouble())).
-                thenAnswer(invocation -> Table.sinMap.get(invocation.getArgument(0)));
+        when(sin.compute(anyDouble(), anyDouble())).thenAnswer(invocation -> Table.sinMap.get(invocation.getArgument(0)));
+        when(cos.compute(anyDouble(), anyDouble())).thenAnswer(invocation -> Table.cosMap.get(invocation.getArgument(0)));
 
-        when(ln.compute(anyDouble(), anyDouble())).
-                thenAnswer(invocation -> Table.lnMap.get(invocation.getArgument(0)));
+        when(ln.compute(anyDouble(), anyDouble())).thenAnswer(invocation -> Table.lnMap.get(invocation.getArgument(0)));
 
-        csc = new Csc((Sin) sin);
-        cot = new Cot((Sin) sin, (Cos) cos);
-        tan = new Tan((Cos) cos, (Sin) sin);
-        sec = new Sec((Cos) cos);
+        csc = new Csc(sin);
+        cot = new Cot(sin, cos);
+        tan = new Tan(cos, sin);
+        sec = new Sec(cos);
 
-        log3 = new Log3((Ln) ln);
-        log5 = new Log5((Ln) ln);
-        log10 = new Log10((Ln) ln);
+        log3 = new Log3(ln);
+        log5 = new Log5(ln);
+        log10 = new Log10(ln);
 
-        logarithmicFunction = new LogarithmicFunction((Ln) ln, (Log3) log3, (Log5) log5, (Log10) log10);
-        trigonometricFunction = new TrigonometricFunction((Csc) csc, (Cot) cot, (Cos) cos, (Tan) tan, (Sec) sec);
+        logarithmicFunction = new LogarithmicFunction(ln, log3, log5, log10);
+        trigonometricFunction = new TrigonometricFunction(csc, cot, cos, tan, sec);
 
         functionsSystem = new FunctionsSystem(logarithmicFunction, trigonometricFunction);
         result = functionsSystem.compute(x, accuracy);
+
 
         Assertions.assertTrue(Math.abs(result - expected) < accuracy);
     }

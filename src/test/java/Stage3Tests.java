@@ -10,14 +10,12 @@ import static org.mockito.Mockito.when;
 
 public class Stage3Tests extends Tests {
 
-    private double x;
-    private double accuracy = 0.0001;
+    private double accuracy = 0.01;
     private double result;
-    private double expected;
 
     private LogarithmicFunction logarithmicFunction;
     private TrigonometricFunction trigonometricFunction;
-    private Computable sin, cos, cot, csc, sec, tan, ln, log3, log5, log10;
+    private Computable cos, cot, csc, sec, tan, ln, log3, log5, log10;
     private FunctionsSystem functionsSystem;
 
 
