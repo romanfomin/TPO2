@@ -18,6 +18,9 @@ public class LogarithmicFunction implements Computable {
 
     @Override
     public double compute(double x, double accuracy) {
+        if(x<=0 || x==1){
+//            throw new IllegalArgumentException();
+        }
         return (((((ln.compute(x,accuracy)/ln.compute(x,accuracy))/log5.compute(x,accuracy))
         -(log3.compute(x,accuracy)/log10.compute(x,accuracy)))/log10.compute(x,accuracy))
         -log10.compute(x,accuracy));

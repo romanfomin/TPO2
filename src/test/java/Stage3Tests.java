@@ -3,6 +3,7 @@ import Functions.FunctionsSystem;
 import Functions.Logarithmic.*;
 import Functions.Trigonometric.*;
 import org.junit.jupiter.api.Assertions;
+import org.junit.jupiter.api.Test;
 import org.mockito.Mockito;
 
 import static org.mockito.Mockito.anyDouble;
@@ -16,11 +17,18 @@ public class Stage3Tests extends Tests {
     private LogarithmicFunction logarithmicFunction;
     private TrigonometricFunction trigonometricFunction;
     private Computable cos, cot, csc, sec, tan, ln, log3, log5, log10;
-    private FunctionsSystem functionsSystem;
+//    private FunctionsSystem functionsSystem;
 
 
     @Override
     public void doMockAndAssert() {
+        setUp();
+        result = functionsSystem.compute(x, accuracy);
+
+        Assertions.assertTrue(Math.abs(result - expected) < 0.1);
+    }
+
+    private void setUp(){
         cos = Mockito.mock(Cos.class);
         csc = Mockito.mock(Csc.class);
         cot = Mockito.mock(Cot.class);
@@ -56,8 +64,19 @@ public class Stage3Tests extends Tests {
         trigonometricFunction = new TrigonometricFunction((Csc) csc, (Cot) cot, (Cos) cos, (Tan) tan, (Sec) sec);
 
         functionsSystem = new FunctionsSystem(logarithmicFunction, trigonometricFunction);
-        result = functionsSystem.compute(x, accuracy);
+    }
 
-        Assertions.assertTrue(Math.abs(result - expected) < accuracy);
+    @Test
+    public void testMethod18() {
+        x = 1;
+        setUp();
+        Assertions.assertThrows(IllegalArgumentException.class, ()->functionsSystem.compute(x,accuracy));
+    }
+
+    @Test
+    public void testMethod19(){
+        x=-Math.PI/2;
+        setUp();
+        Assertions.assertThrows(IllegalArgumentException.class, ()->functionsSystem.compute(x,accuracy));
     }
 }

@@ -1,9 +1,13 @@
+import Functions.CSVLog;
+import Functions.FunctionsSystem;
 import org.junit.jupiter.api.Test;
 
 public abstract class Tests {
     protected double x;
     protected double expected;
+    protected FunctionsSystem functionsSystem;
 
+    static int no = 1;
     public abstract void doMockAndAssert();
 
     @Test
@@ -11,6 +15,7 @@ public abstract class Tests {
         x = -0.4;
         expected = 336.6779;
         doMockAndAssert();
+        CSVLog.logModuleToCSV(functionsSystem,-8,8,0.01,0.1,no++);
     }
 
     @Test
@@ -125,4 +130,6 @@ public abstract class Tests {
         expected = -2.3532;
         doMockAndAssert();
     }
+
+
 }

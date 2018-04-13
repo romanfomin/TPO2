@@ -20,6 +20,9 @@ public class TrigonometricFunction implements Computable {
 
     @Override
     public double compute(double x, double accuracy) {
+        if(x>=0 || Math.abs(x)%(Math.PI/2)==0){
+//            throw new IllegalArgumentException();
+        }
         return (Math.pow((((Math.pow(csc.compute(x, accuracy), 2) + (cot.compute(x, accuracy) - csc.compute(x, accuracy)))
                 + (cos.compute(x, accuracy) * tan.compute(x, accuracy))) * sec.compute(x, accuracy)), 3));
     }

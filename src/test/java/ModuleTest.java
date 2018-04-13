@@ -35,6 +35,6 @@ public class ModuleTest {
         step=0.1;
         accuracy=0.001;
 
-        CSVLog.logModuleToCSV(module,from,to,step,accuracy);
+//        CSVLog.logModuleToCSV(module,from,to,step,accuracy);
     }
 }

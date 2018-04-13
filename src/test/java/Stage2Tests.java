@@ -13,7 +13,7 @@ public class Stage2Tests extends Tests{
 
     private LogarithmicFunction logarithmicFunction;
     private TrigonometricFunction trigonometricFunction;
-    private FunctionsSystem functionsSystem;
+//    private FunctionsSystem functionsSystem;
 
 
     @Override

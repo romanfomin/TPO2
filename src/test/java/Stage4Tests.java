@@ -25,7 +25,7 @@ public class Stage4Tests extends Tests {
     private Log3 log3;
     private Log5 log5;
     private Log10 log10;
-    private FunctionsSystem functionsSystem;
+//    private FunctionsSystem functionsSystem;
 
 
     @Override

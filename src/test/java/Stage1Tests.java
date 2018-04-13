@@ -10,7 +10,7 @@ public class Stage1Tests extends Tests {
     private double accuracy = 0.0001;
     private double result;
 
-    private FunctionsSystem functionsSystem;
+//    private FunctionsSystem functionsSystem;
 
     @Override
     public void doMockAndAssert() {
